@@ -1,0 +1,195 @@
+.header
+  @include  bg( #F5F5F5)
+  transition: all .3s ease-out
+  position: fixed
+  width: 100%
+  z-index: 1000
+  top: 0
+  left: 0
+  box-sizing: border-box
+  height: 70px
+  &__body
+    @include alic
+    height: 100%
+
+  &__logo
+    max-width: 260px
+    width: calc(150px + (260-150)*((100vw-320px)/(1440-320)))
+    height: 32px
+    @include  bg(#d24a4c)
+    border-radius: 10px
+    img
+      width: 100%
+      height: 100%
+
+  &__menu
+    flex: 0 1 34%
+    margin: 0 30px 0 auto
+    @include alic
+    border: 1px solid red
+  
+  &__menu ul
+    @include jucb
+    width: 100%
+    height: 100%
+    @include  bg(#d24a4c)
+  &__link
+    height: 100%
+    @include  font-family(Balsamiq Sans,300,18px,22px,#032E4A)
+  &__search
+    font-size: 14px
+    color: black
+    flex: 0 1 245px
+    height: 31px
+    @include jucb
+    position: relative
+    input
+      border-radius: 38px
+      width: 100%
+      height: 100%
+    .icon-Vector
+      transition: all 0.3s ease-in-out
+      @include absolute( 16px, 16px, 50%, null, 10px,0,-50%)
+      &:hover
+        cursor: pointer
+  &__phone-link
+    @include  font-family(Anton,600,18px,22px,#032E4A)
+    font-size: calc(12px + (18-12)*((100vw-320px)/(1440-320)))
+    letter-spacing: calc(2px + (1-2)*((100vw-320px)/(1440-320)))
+    margin: 0 30px 0 0
+    @include center
+
+@include media-breakpoint-down(lg) 
+  .header__menu
+    margin: 0 0 0 0
+    margin: 0 40px 0 20px
+  .header__phone-link
+    margin: 0 20px 0 0
+    font-size: 16px
+  .header__search
+    flex: 0 1 170px
+    margin: 0 0 0 auto
+
+
+
+.icon-close2
+  @include absolute(20px,20px,30px,null,40px,0%,0%)
+  font-size: 20px
+  display: none
+  color: white
+// --------------------------------------------------------------------------
+@include media-breakpoint-down(lg)
+  .icon-close2
+    display: flex
+    z-index: 1000
+  .header
+    &__menu
+      margin: 0
+      width: 100vw
+      min-height: 100vh
+      position: fixed
+      top: 0
+      left: -100vw
+      padding: 80px 40px 0 40px
+      box-sizing: border-box
+      transition: all .3s ease-out
+      overflow: auto
+      text-align: right
+      @include fdc
+      &_overlay
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0%
+        left: 0%
+        @include bg(lighten(black, 5%))
+        opacity: .95
+        z-index: 1
+    &__menu_act
+      left: -40px
+    &__menu ul
+      @include fdc
+      @include alie
+    &__menu ul li
+      margin: 20px 0 0 0
+      z-index: 2
+      display: inline-flex
+    &__menu ul li:first-child
+      margin: 0 0 0 0
+    &__link
+      font-size: 30px
+      color: white
+    &__burger
+      margin: 0 0 0 auto
+      font-size: 20px
+    &__phone-link, &__search
+      display: none
+      font-size: 20px
+      color: white
+      margin: 40px 0 0 auto
+    &__phone-link
+      font-size: calc(12px + (18-12)*((100vw-200px)/(1145-200)))
+    &__search
+      margin: 40px 0 0 auto
+      flex: 0 1 auto
+      width: calc(160px + (200-160)*((100vw-200px)/(320-200)))
+      height: 30px
+      input
+        width: calc(160px + (200-160)*((100vw-200px)/(320-200)))
+      i
+        font-size: 16px
+    &__phone_act
+      position: relative
+      z-index: 2
+      display: flex
+      
+@include media-breakpoint-down(xs) 
+  .header__body
+    padding: 0 15px	
+  .header__menu_act 
+    left: -17px!important
+
+
+@include media-breakpoint-up(xl)
+  .header__burger
+    display: none
+  .header
+    &__menu
+      height: 100%
+    &__link
+      @include center
+      margin: auto!important
+      position: relative
+      &:after
+        content: ""
+        background-color: #1DE9B6
+        @include  absolute( 100%, 3px, -2px,0, null,0,2px)
+        z-index: 2
+        opacity: 0
+        transition: all 0.2s ease-in-out
+      &:hover
+        color: #40C4FF
+        &:after
+          opacity: 1
+          transform: translate(0, 0px)
+      &:active
+        transition: all 0.2s ease-in-out
+        @include bg(#3D5AFE)
+        color: #80D8FF
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.12)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
