@@ -35,3 +35,4 @@ import './css/style.css';// <--это icomoon
 
 // главный файл стилей
 import './sass/style.sass';
+

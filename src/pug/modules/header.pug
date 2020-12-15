@@ -2,19 +2,6 @@
 include ../utils/mixins
 
 
-
-
-//- #p_prldr
-//-   .contpre
-//-     span.svg_anm
-//-     br
-//-     | Подождите
-//-     br
-//-     small идет загрузка
-
-
-
-
 //- сделал оверлей поверх меню на <768. по оверлею-закрытие. он прозрачный. z-index: 1. чтобы ссылки были поверх него им индекс немного больше. вообще все кликабельное-- сквезь него индексами.
 
 
@@ -26,13 +13,13 @@ include ../utils/mixins
       .header__menu_overlay
       ul
         li
-          a.header__link(href='#!') About
+          button.btn.btn-outline-primary.btn-outline-primary-header.header__link(type='button') About
         li
-          a.header__link(href='#!') Services 
+          button.btn.btn-outline-primary.btn-outline-primary-header.header__link(type='button') Services
         li
-          a.header__link(href='#!') Price list
+          button.btn.btn-outline-primary.btn-outline-primary-header.header__link(type='button') Price list
         li
-          a.header__link(href='#!') Contacts 
+          button.btn.btn-outline-primary.btn-outline-primary-header.header__link(type='button') Contacts
 
       span.icon-close2
     a(href="#!").header__phone-link +7(495) 726-55-80
